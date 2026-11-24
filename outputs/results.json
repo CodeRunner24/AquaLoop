@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "dataset": "synthetic",
+    "seed": 2026,
+    "training_days": 60,
+    "test_days": 30,
+    "plant_connected": false,
+    "water_model": "two simplified raw/treated tanks; certified water treatment not modeled",
+    "heat_recovery": "theoretical upper-bound based on efficiency assumption; no heat demand cap"
+  },
+  "forecast": {
+    "random_forest_test_mae_m3_h": 0.0481,
+    "training_mean_test_mae_m3_h": 0.2578
+  },
+  "anomalies": {
+    "injected_leak_hours": 13,
+    "flagged_leak_hours": 9,
+    "false_alarm_hours_outside_leak_test": 26
+  },
+  "assumptions": {
+    "tank_m3": 20,
+    "treatment_m3_h": 2.2,
+    "heat_recovery_efficiency": 0.45,
+    "pump_specific_kwh_per_m3": 0.48,
+    "water_price_tl_per_m3": 65,
+    "heat_value_tl_per_kwh": 1.6,
+    "notes": "illustrative prices only, exclude capex maintenance treatment electricity heat-pump and hygiene monitoring costs"
+  },
+  "comparison": {
+    "no_recovery": {
+      "freshwater_m3": 1637.8,
+      "heat_kwh": 0,
+      "pump_kwh": 0
+    },
+    "conventional": {
+      "reuse_m3": 441.8,
+      "water_m3": 1637.8,
+      "treated_m3": 446.02,
+      "heat_kwh": 4941.49,
+      "pump_kwh": 314.89,
+      "untreated_discharge_m3": 0.0,
+      "overflow_m3": 154.15
+    },
+    "smart": {
+      "reuse_m3": 441.8,
+      "water_m3": 1637.8,
+      "treated_m3": 446.08,
+      "heat_kwh": 4941.49,
+      "pump_kwh": 314.92,
+      "untreated_discharge_m3": 0.0,
+      "overflow_m3": 154.15
+    }
+  },
+  "constraints": [
+    "greywater separate from sewage/blackwater",
+    "non-potable use only after certified treatment/monitoring",
+    "failure diverts to sewage and municipal backup",
+    "no automatic potable cross-connection"
+  ]
+}
