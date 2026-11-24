@@ -8,7 +8,7 @@ Wilo Water AI Hackathon 2026 için, yurt ve otellerde gri suyun yeniden kullanı
 [HTML dosyasını doğrudan indir](https://github.com/CodeRunner24/AquaLoop/raw/refs/heads/main/AquaLoop_AI_Demo.html) · Kurulum gerektirmez; indirip tarayıcıda açın.
 
 ### [▶️ Tanıtım videosunu izle](submission/AquaLoop_AI_Tanitim.mp4)
-3 dakika 40 saniye · Türkçe yapay sesli anlatım · [Altyazı](submission/AquaLoop_AI_Tanitim.srt) · [MP4 indir](https://github.com/CodeRunner24/AquaLoop/raw/refs/heads/main/submission/AquaLoop_AI_Tanitim.mp4)
+3 dakika 40 saniye · Sessiz tanıtım · [Altyazı](submission/AquaLoop_AI_Tanitim.srt) · [MP4 indir](https://github.com/CodeRunner24/AquaLoop/raw/refs/heads/main/submission/AquaLoop_AI_Tanitim.mp4)
 
 ### [📄 A3 proje posterini görüntüle (PDF)](submission/AquaLoop_AI_Proje_Posteri.pdf)
 [Tek sayfalık poster — düzenlenebilir PowerPoint](submission/AquaLoop_AI_Proje_Posteri.pptx)
