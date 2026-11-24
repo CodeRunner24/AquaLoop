@@ -1,0 +1,52 @@
+1
+00:00:00,000 --> 00:00:15,200
+AquaLoop AI, Wilo Water AI Hackathon için geliştirdiğimiz bina su yönetimi prototipi. Amacımız yalnızca gri suyu geri kazanmak değil, geri kazanım sistemlerinin verimli ve güvenilir biçimde işletilmesine yardımcı olmak.
+
+2
+00:00:15,200 --> 00:00:32,000
+İlk hedefimiz öğrenci yurtları ve oteller. Duş ve lavabodan çıkan gri su, uygun arıtma sonrasında rezervuarlarda kullanılabilir. Ancak sistemin işletme maliyeti, arızalar ve atık ısının gerçek kullanım potansiyeli de dikkate alınmalıdır.
+
+3
+00:00:32,000 --> 00:00:54,400
+Bu nedenle beş teknik görüş talebi ile sahayı anlamaya çalıştık. Mekanik Tesisat Müteahhitleri Derneği müdürü Nilgün İlik Eren bizi Meta Mühendislik sahibi, kimya mühendisi Melek Yıldız ile tanıştırdı. Yazılı görüşü, mevcut altyapıya odaklanmamızı, arıtma alarmını geliştirmemizi ve eşanjör hesabına gerçek ısı talebini eklememizi sağladı.
+
+4
+00:00:54,400 --> 00:01:11,200
+Çözümümüz su dengesi, arıtma telemetrisi ve ısı yatırımı kararlarını aynı ekranda birleştiriyor. Kalite ve güvenlik kontrolleri bağımsızdır. Yapay zekâ, operatörün kararını destekler; arıtma kalitesine ilişkin sertifikasyonun yerine geçmez.
+
+5
+00:01:11,200 --> 00:01:28,800
+Üç farklı yöntem kullanıyoruz. Random Forest saatlik su talebini tahmin ediyor. Isolation Forest ana sayaçtaki olağandışı tüketimi işaretliyor. Doğrusal regresyon ise arıtma komutu ve tank seviyelerinden beklenen debi ile pompa elektriğini öğreniyor.
+
+6
+00:01:28,800 --> 00:01:47,200
+Dört sentetik arıza üzerinde iki alarm yöntemini karşılaştırdık. Her ikisi de tüm olayları tespit etti. Sabit eşik ortalama on bir virgül yetmiş beş saat, öğrenen model dört virgül yetmiş beş saatte uyardı. Arıza dışı alarm süresi altı saatten bir saate düştü.
+
+7
+00:01:47,200 --> 00:02:05,600
+Otuz günlük örnek binada dört yüz kırk bir virgül sekiz metreküp gri su geri kazanıldı. Her iki işletim politikası aynı su tasarrufunu sağladı. Yapay zekânın bu deneydeki katkısı daha iyi tahmin ve erken arıza uyarısıdır. Sonuçlar gerçek tesis ölçümü değildir.
+
+8
+00:02:05,600 --> 00:02:20,800
+Şimdi çalışan prototipimize bakalım. Genel bakış ekranında su dengesi, saatlik talep tahmini ve temel işletim göstergeleri izlenebiliyor. Demo internet bağlantısı veya servis anahtarı olmadan tarayıcıda çalışıyor.
+
+9
+00:02:20,800 --> 00:02:34,400
+Senaryo laboratuvarında tank hacmi ve arıtma kapasitesi değiştirilerek otuz günlük su dengesi yeniden hesaplanabiliyor. Böylece farklı kapasite seçimlerinin sonuçları ilk yatırım öncesinde incelenebiliyor.
+
+10
+00:02:34,400 --> 00:02:50,400
+Arıtma alarmı ekranında normal işletim ve dört arıza kesiti karşılaştırılıyor. Beklenen ve ölçülen debi ile enerji tüketimi arasındaki fark, bakım ekibine inceleme sinyali veriyor. Bu, doğrudan arıza teşhisi değil, erken uyarıdır.
+
+11
+00:02:50,400 --> 00:03:07,200
+Eşanjör yatırım ekranı, yalnızca aynı saat içinde kullanılabilen ısıyı hesaba katıyor. Yatırım, enerji fiyatı, bakım ve yardımcı elektrik giderleri değiştirildiğinde basit geri ödeme güncelleniyor. Varsayılan değerler temsili bir senaryodur.
+
+12
+00:03:07,200 --> 00:03:23,200
+Sonraki adımımız uygun gri su altyapısına sahip bir saha ortağıyla gerçek sayaç ve bakım verilerini toplamak. Önce operatör kararlarına müdahale etmeyen izleme modunda, sonra mühendis onayıyla kontrollü pilotta performansı ölçeceğiz.
+
+13
+00:03:23,200 --> 00:03:40,000
+AquaLoop AI bugün çalışan bir konsept prototipidir. Kodlar, interaktif demo, poster ve deney sonuçları GitHub depomuzda erişilebilir. Suyu geri kazanmak yetmez; sistemin çalışmasını sağlamak gerekir. Teşekkür ederiz.
+

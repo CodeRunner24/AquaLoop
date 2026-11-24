@@ -2,6 +2,26 @@
 
 Wilo Water AI Hackathon 2026 için, yurt ve otellerde gri suyun yeniden kullanılması ve arıtma hattının izlenmesi üzerine geliştirilmiş çevrimdışı prototip. Eşanjör yatırımı, binanın aynı saat içinde kullanabileceği ısıya göre ayrıca değerlendirilebilir.
 
+## Wilo Water AI Hackathon 2026 — Jüri teslim dosyaları
+
+### [💧 İnteraktif demoyu aç / indir](https://github.com/CodeRunner24/AquaLoop/blob/main/AquaLoop_AI_Demo.html)
+[HTML dosyasını doğrudan indir](https://github.com/CodeRunner24/AquaLoop/raw/refs/heads/main/AquaLoop_AI_Demo.html) · Kurulum gerektirmez; indirip tarayıcıda açın.
+
+### [▶️ Tanıtım videosunu izle](submission/AquaLoop_AI_Tanitim.mp4)
+3 dakika 40 saniye · Türkçe yapay sesli anlatım · [Altyazı](submission/AquaLoop_AI_Tanitim.srt) · [MP4 indir](https://github.com/CodeRunner24/AquaLoop/raw/refs/heads/main/submission/AquaLoop_AI_Tanitim.mp4)
+
+### [📄 A3 proje posterini görüntüle (PDF)](submission/AquaLoop_AI_Proje_Posteri.pdf)
+[Tek sayfalık poster — düzenlenebilir PowerPoint](submission/AquaLoop_AI_Proje_Posteri.pptx)
+
+### [📊 Jüri sunumunu görüntüle (PDF)](submission/AquaLoop_AI_Juri_Sunumu.pdf)
+[10 slayt — düzenlenebilir PowerPoint](submission/AquaLoop_AI_Juri_Sunumu.pptx)
+
+### [🔬 Teknik proje planı ve saha araştırması](docs/PROJECT_PLAN_TR.md)
+
+**Sentetik deney sonuçları:** 4/4 arıza tespiti; ortalama ilk alarm gecikmesi 11,75 saatten 4,75 saate düştü. Bu bulgular gerçek saha ölçümü değildir.
+
+---
+
 ## Demoyu açma
 
 `AquaLoop_AI_Demo.html` dosyasını Chrome, Edge veya Firefox ile açın. Kurulum ya da internet bağlantısı gerekmez.
@@ -12,6 +32,8 @@ Wilo Water AI Hackathon 2026 için, yurt ve otellerde gri suyun yeniden kullanı
 3. **Eşanjör Yatırımı** sekmesinde yatırım, fiyat, bakım ve sıcak su varsayımlarını girin. Yıllık fayda ve geri ödeme anında güncellenir.
 
 ## İlk uzman görüşmesinin etkisi
+
+Proje geliştirme sürecinde MTMD (Mekanik Tesisat Müteahhitleri Derneği) müdürü **Nilgün İlik Eren** ile e-posta üzerinden iletişim kurduk. Onun yönlendirmesiyle **Melek Yıldız** (Meta Mühendislik sahibi, kimya mühendisi ve su arıtımı alanında çalışan uzman) ile iletişime geçerek yazılı saha görüşü aldık. Görüşü üç somut tasarım kararına dönüştürdük:
 
 - Gri suyu ayrı toplama ve dağıtma hattı sonradan eklendiğinde tadilat zorlaşıyor. İlk pilot için mevcut gri su altyapısı olan veya tesisatı tasarlanan bir yapı hedefleniyor.
 - Kalifiye personel, ekipmanın çalışabilirliği ve elektrik gideri sistemin kullanımda kalmasını etkiliyor. Arıtma alarmı, beklenenden düşük debiyi veya yüksek pompa elektriğini inceleme için işaretliyor.
