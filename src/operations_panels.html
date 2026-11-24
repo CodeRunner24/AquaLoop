@@ -1,0 +1,75 @@
+<section class="tab" id="operations" aria-labelledby="operationsHeading">
+  <div class="panel">
+    <div class="eyebrow">Saatlik sentetik tesis verisi</div>
+    <h2 id="operationsHeading">Arıtma hattında erken uyarı</h2>
+    <p class="note">Model, arıtma hedefi ve tank seviyelerine göre beklenen debiyi ve pompa tüketimini öğrenir. Ölçülen debinin düşmesi veya elektriğin artması art arda iki saat devam ettiğinde inceleme uyarısı oluşabilir.</p>
+    <div class="two ops-controls">
+      <label for="processEvent">İncelenen senaryo <select id="processEvent"></select></label>
+      <div class="ops-status" id="processStatus" aria-live="polite"></div>
+    </div>
+    <p class="note" id="processWindow"></p>
+    <div class="two">
+      <div><h3>Arıtılan su</h3><p class="ops-legend">m³/saat · <span class="ops-observed">Ölçülen</span> / Beklenen</p><div class="chart ops-chart"><canvas id="processFlowChart" aria-label="Ölçülen ve beklenen arıtma debisi grafiği" role="img"></canvas></div></div>
+      <div><h3>Pompa elektriği</h3><p class="ops-legend">kWh/saat · <span class="ops-observed">Ölçülen</span> / Beklenen</p><div class="chart ops-chart"><canvas id="processPowerChart" aria-label="Ölçülen ve beklenen pompa elektriği grafiği" role="img"></canvas></div></div>
+    </div>
+    <div class="ops-metrics" aria-live="polite">
+      <div class="metric"><span>Klasik eşik · ilk uyarı</span><strong id="eventFixedDelay">—</strong></div>
+      <div class="metric"><span>Model · ilk uyarı</span><strong id="eventAiDelay">—</strong></div>
+      <div class="metric"><span>Seçili kesitte ölçülen enerji yoğunluğu</span><strong id="eventIntensity">—</strong></div>
+      <div class="metric"><span>Seçili kesitte beklenen enerji yoğunluğu</span><strong id="expectedIntensity">—</strong></div>
+    </div>
+  </div>
+  <div class="panel ops-section">
+    <h3>30 günlük alarm kıyaslaması</h3>
+    <div class="ops-table">
+      <table><thead><tr><th scope="col">Ölçüt</th><th scope="col">Sabit kWh/m³ eşiği</th><th scope="col">Öğrenen model</th></tr></thead><tbody>
+        <tr><th scope="row">Yakalanan arıza olayı</th><td id="fixedFound">—</td><td id="aiFound">—</td></tr>
+        <tr><th scope="row">Arıza dışında alarm verilen saat</th><td id="fixedFalse">—</td><td id="aiFalse">—</td></tr>
+        <tr><th scope="row">Yakalanan olaylarda ortalama gecikme</th><td id="fixedMean">—</td><td id="aiMean">—</td></tr>
+      </tbody></table>
+    </div>
+    <p class="note">45 gün eğitim, 15 gün normal çalışma üzerinde eşik ayarı, 30 gün test. Her iki yöntem aynı iki saat kalıcılık koşulunu kullanır. Dört arıza son 30 güne sentetik olarak eklenmiştir. Alarm, ölçümleri ve pompa/filtre hattını incelemek için bir işarettir.</p>
+  </div>
+  <div class="panel ops-section">
+    <h3>Bina ana sayacı · olası su kaçağı</h3>
+    <p class="note">Önceki ana sayaç deneyindeki en uzun kesintisiz alarm. Alan, sayacın kapsadığı bina geneliyle sınırlıdır.</p>
+    <div class="ops-metrics">
+      <div class="metric"><span>İlk uyarı</span><strong id="buildingFirst">—</strong></div>
+      <div class="metric"><span>Kesintisiz alarm süresi</span><strong id="buildingDuration">—</strong></div>
+      <div class="metric"><span>Tahmini fazla su kullanımı</span><strong id="buildingExcess">—</strong></div>
+      <div class="metric"><span>Sayaç bölgesi</span><strong>Bina geneli</strong></div>
+    </div>
+    <p class="note">Fazla kullanım, alarm saatlerindeki ölçümler ile geçmişte aynı saatlerde beklenen tüketim arasındaki pozitif farkların toplamıdır. Operatör, kaçağı sahada teyit eder.</p>
+  </div>
+</section>
+
+<section class="tab" id="payback" aria-labelledby="paybackHeading">
+  <div class="panel">
+    <div class="eyebrow">Varsayımsal yatırım senaryosu</div>
+    <h2 id="paybackHeading">Isı eşanjörü için geri ödeme hesabı</h2>
+    <p class="note">Hesap, sıcak atık suyun ısısını aynı saat içinde kullanılabilecek sıcak su talebiyle sınırlar. Yatırım ve maliyet girdilerini tesisinize göre değiştirin.</p>
+    <div class="two">
+      <form class="ops-fields" id="heatForm">
+        <label>Kurulum dahil ek yatırım <span>TL</span><input id="heatCapex" type="number" min="0" max="1000000000" step="any" value="180000" required></label>
+        <label>Yerine geçen faydalı ısının maliyeti <span>TL/kWh ısı</span><input id="heatPrice" type="number" min="0" max="100000" step="any" value="2.20" required></label>
+        <label>Yıllık bakım ve temizlik <span>TL/yıl</span><input id="heatMaintenance" type="number" min="0" max="1000000000" step="any" value="6000" required></label>
+        <label>Varsayılan yardımcı elektrik <span>kWh/işletme günü</span><input id="heatAux" type="number" min="0" max="100000" step="any" value="0.8" required></label>
+        <label>Yardımcı elektrik maliyeti <span>TL/kWh elektrik</span><input id="heatPowerPrice" type="number" min="0" max="100000" step="any" value="4.50" required></label>
+        <label>Yıllık işletme süresi <span>gün/yıl</span><input id="heatDays" type="number" min="0" max="365" step="1" value="330" required></label>
+        <label>Sıcak suyun toplam kullanım içindeki payı <span>%</span><input id="heatDemandShare" type="number" min="0" max="100" step="1" value="12" required></label>
+        <label>Isı kaynağıyla örtüşen sıcak su talebi <span>%</span><input id="heatOverlap" type="number" min="0" max="100" step="1" value="45" required></label>
+        <label>Sıcak su model sıcaklığı <span>°C</span><input id="heatSetpoint" type="number" min="0" max="95" step="1" value="45" required></label>
+        <label>Eşanjör etkinliği <span>%</span><input id="heatEfficiency" type="number" min="0" max="100" step="1" value="45" required></label>
+      </form>
+      <div class="ops-result" aria-live="polite">
+        <div class="card payback-card"><div class="small">Basit geri ödeme süresi</div><div class="value" id="heatPayback">—</div><p id="heatPaybackNote" class="hint"></p></div>
+        <div class="metric"><span>Teorik ısı potansiyeli</span><strong id="annualPotential">—</strong></div>
+        <div class="metric"><span>Talep ile eşleşen ısı</span><strong id="annualUseful">—</strong></div>
+        <div class="metric"><span>Brüt enerji tasarrufu</span><strong id="annualGross">—</strong></div>
+        <div class="metric"><span>Bakım ve yardımcı elektrik</span><strong id="annualOpex">—</strong></div>
+        <div class="metric"><span>Net yıllık fayda</span><strong id="annualNet">—</strong></div>
+      </div>
+    </div>
+    <p class="note">Varsayılan fiyatlar örnek değerlerdir. 30 günlük bina profili işletme günlerine ölçeklenir. Geri ödeme = kurulum dahil eşanjör yatırımı / net yıllık fayda. Enflasyon, finansman, iskonto ve ekipman değişimi dahil değildir. Gri su arıtma tesisinin maliyeti bu hesaba dahil edilmez.</p>
+  </div>
+</section>
