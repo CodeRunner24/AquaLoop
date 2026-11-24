@@ -1,0 +1,73 @@
+{
+  "fit_days": 45,
+  "calibration_days": 15,
+  "test_days": 30,
+  "test_fault_hours": 98,
+  "persistence": 2,
+  "thresholds": {
+    "fixed": 0.8947187803913267,
+    "ai": 2.1652391428176014
+  },
+  "normal": {
+    "id": "normal",
+    "name": "Normal işletim",
+    "window_start": 24,
+    "window_end": 72
+  },
+  "events": [
+    {
+      "id": "fault-1",
+      "name": "Yavaş verim kaybı",
+      "start": 96,
+      "end": 120,
+      "window_start": 84,
+      "window_end": 128,
+      "fixed_delay": 12,
+      "ai_delay": 5
+    },
+    {
+      "id": "fault-2",
+      "name": "Ani debi düşüşü",
+      "start": 249,
+      "end": 265,
+      "window_start": 237,
+      "window_end": 273,
+      "fixed_delay": 1,
+      "ai_delay": 0
+    },
+    {
+      "id": "fault-3",
+      "name": "Hafif, kademeli verim kaybı",
+      "start": 420,
+      "end": 450,
+      "window_start": 408,
+      "window_end": 458,
+      "fixed_delay": 25,
+      "ai_delay": 10
+    },
+    {
+      "id": "fault-4",
+      "name": "Uzun süreli debi düşüşü",
+      "start": 592,
+      "end": 620,
+      "window_start": 580,
+      "window_end": 628,
+      "fixed_delay": 9,
+      "ai_delay": 4
+    }
+  ],
+  "detectors": {
+    "fixed": {
+      "detected": 4,
+      "total_events": 4,
+      "false_alarm_hours": 6,
+      "mean_delay_h": 11.75
+    },
+    "ai": {
+      "detected": 4,
+      "total_events": 4,
+      "false_alarm_hours": 1,
+      "mean_delay_h": 4.75
+    }
+  }
+}
